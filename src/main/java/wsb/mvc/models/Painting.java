@@ -1,6 +1,18 @@
-package wsb.jsp.models;
+package wsb.mvc.models;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+@Getter
+@NoArgsConstructor
 public class Painting {
+
+    @Id
+    Long id;
 
     String name;
     String author;
@@ -14,21 +26,5 @@ public class Painting {
         this.author = author;
         this.year = year;
         this.url = url;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public Integer getYear() {
-        return year;
-    }
-
-    public String getUrl() {
-        return url;
     }
 }

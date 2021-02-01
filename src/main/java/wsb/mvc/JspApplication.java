@@ -1,4 +1,4 @@
-package wsb.jsp;
+package wsb.mvc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

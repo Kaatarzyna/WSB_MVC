@@ -1,15 +1,21 @@
-package wsb.jsp.repositories;
+package wsb.mvc.repositories;
 
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Repository;
-import wsb.jsp.models.Painting;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+import wsb.mvc.models.Painting;
 
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
-@Repository
-public class PaintingRepository {
+@Repository("fake")
+public class FakePaintingRepository implements PaintingRepository {
 
     private static final List<Painting> paintings = new LinkedList<>(Arrays.asList(
             new Painting("Papież Leon X", "Fernando Botero", 1964, "https://bestofbharat.com/wp-content/uploads/2019/10/Pope-leo-x-after-raphael-199.png"),
@@ -23,8 +29,132 @@ public class PaintingRepository {
     ));
 
 
-    public List<Painting> findAll(String paintingName) {
-        return paintings.stream().filter(p -> p.getName().toLowerCase().contains(paintingName)).collect(Collectors.toList());
+    @Override
+    public List<Painting> findAll() {
+        return paintings;
     }
 
+    @Override
+    public long count() {
+        return paintings.stream().count();
+    }
+
+    @Override
+    public List<Painting> findByNameContains(String name) {
+        return paintings.stream()
+                .filter(p -> p.getName().toLowerCase().contains(name.toLowerCase())).collect(Collectors.toList());
+    }
+
+
+    // niezaimplementowane
+
+    @Override
+    public List<Painting> findAll(Sort sort) {
+        throw new NotImplementedException();
+    }
+
+    @Override
+    public Page<Painting> findAll(Pageable pageable) {
+        throw new NotImplementedException();
+    }
+
+    @Override
+    public List<Painting> findAllById(Iterable<Long> iterable) {
+        throw new NotImplementedException();
+    }
+
+    @Override
+    public void deleteById(Long aLong) {
+        throw new NotImplementedException();
+    }
+
+    @Override
+    public void delete(Painting painting) {
+        throw new NotImplementedException();
+    }
+
+    @Override
+    public void deleteAll(Iterable<? extends Painting> iterable) {
+        throw new NotImplementedException();
+    }
+
+    @Override
+    public void deleteAll() {
+        throw new NotImplementedException();
+    }
+
+    @Override
+    public <S extends Painting> S save(S s) {
+        throw new NotImplementedException();
+    }
+
+    @Override
+    public <S extends Painting> List<S> saveAll(Iterable<S> iterable) {
+        throw new NotImplementedException();
+    }
+
+    @Override
+    public Optional<Painting> findById(Long aLong) {
+        throw new NotImplementedException();
+    }
+
+    @Override
+    public boolean existsById(Long aLong) {
+        throw new NotImplementedException();
+    }
+
+    @Override
+    public void flush() {
+        throw new NotImplementedException();
+    }
+
+    @Override
+    public <S extends Painting> S saveAndFlush(S s) {
+        throw new NotImplementedException();
+    }
+
+    @Override
+    public void deleteInBatch(Iterable<Painting> iterable) {
+        throw new NotImplementedException();
+    }
+
+    @Override
+    public void deleteAllInBatch() {
+        throw new NotImplementedException();
+    }
+
+    @Override
+    public Painting getOne(Long aLong) {
+        throw new NotImplementedException();
+    }
+
+    @Override
+    public <S extends Painting> Optional<S> findOne(Example<S> example) {
+        throw new NotImplementedException();
+    }
+
+    @Override
+    public <S extends Painting> List<S> findAll(Example<S> example) {
+        throw new NotImplementedException();
+    }
+
+    @Override
+    public <S extends Painting> List<S> findAll(Example<S> example, Sort sort) {
+        throw new NotImplementedException();
+    }
+
+    @Override
+    public <S extends Painting> Page<S> findAll(Example<S> example, Pageable pageable) {
+        throw new NotImplementedException();
+    }
+
+    @Override
+    public <S extends Painting> long count(Example<S> example) {
+        throw new NotImplementedException();
+    }
+
+    @Override
+    public <S extends Painting> boolean exists(Example<S> example) {
+        throw new NotImplementedException();
+    }
 }
