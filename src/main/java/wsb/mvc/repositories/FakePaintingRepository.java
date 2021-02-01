@@ -40,7 +40,7 @@ public class FakePaintingRepository implements PaintingRepository {
     }
 
     @Override
-    public List<Painting> findByNameContains(String name) {
+    public List<Painting> findByNameContainsIgnoreCase(String name) {
         return paintings.stream()
                 .filter(p -> p.getName().toLowerCase().contains(name.toLowerCase())).collect(Collectors.toList());
     }

@@ -12,6 +12,6 @@ import java.util.stream.Collectors;
 @Repository("postgres")
 public interface PaintingRepository extends JpaRepository<Painting, Long> {
 
-    List<Painting> findByNameContains(String name);
+    List<Painting> findByNameContainsIgnoreCase(String name);
 
 }
