@@ -45,6 +45,12 @@ public class FakePaintingRepository implements PaintingRepository {
                 .filter(p -> p.getName().toLowerCase().contains(name.toLowerCase())).collect(Collectors.toList());
     }
 
+    @Override
+    public <S extends Painting> S save(S s) {
+        paintings.add(s);
+        return s;
+    }
+
 
     // niezaimplementowane
 
@@ -80,11 +86,6 @@ public class FakePaintingRepository implements PaintingRepository {
 
     @Override
     public void deleteAll() {
-        throw new NotImplementedException();
-    }
-
-    @Override
-    public <S extends Painting> S save(S s) {
         throw new NotImplementedException();
     }
 

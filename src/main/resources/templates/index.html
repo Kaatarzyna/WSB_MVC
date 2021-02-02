@@ -6,6 +6,10 @@
 <body>
 
 <div class="container">
+    <div class="row mt-2 mb-2">
+        <a th:href="@{/create}" class="btn btn-secondary">Dodaj obraz</a>
+    </div>
+
     <form th:action="@{/}" class="row mt-2 mb-2 d-flex justify-content-center">
         <div class="col-auto">
             <input class="form-control" name="paintingName" th:value="${param.paintingName}"/>
@@ -24,6 +28,8 @@
         <div class="col-sm-6">
             <img th:src="${painting.getUrl()}" width="150px" class="float-end"/>
         </div>
+
+        <hr class="mb-2 mt-2"/>
     </div>
 
 </div>
