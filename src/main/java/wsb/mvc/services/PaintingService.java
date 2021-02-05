@@ -14,16 +14,9 @@ public class PaintingService {
 
     private final Logger log = LoggerFactory.getLogger(PaintingService.class);
 
-    // wersja z "udawaną" bazą danych
-    private final String dataSource = "fake";
-
-    // wersja z prawdziwą bazą danych - należy stworzyć bazę danych w postgresie
-    // i uzupełnić dane dostępu w application.properties
-    // private final String dataSource = "postgres";
-
     final PaintingRepository paintingRepository;
 
-    public PaintingService(@Qualifier(dataSource) PaintingRepository paintingRepository) {
+    public PaintingService(@Qualifier("fake") PaintingRepository paintingRepository) {
         this.paintingRepository = paintingRepository;
     }
 
