@@ -16,7 +16,7 @@ public class PaintingService {
 
     final PaintingRepository paintingRepository;
 
-    public PaintingService(@Qualifier("fake") PaintingRepository paintingRepository) {
+    public PaintingService(@Qualifier("postgres") PaintingRepository paintingRepository) {
         this.paintingRepository = paintingRepository;
     }
 
