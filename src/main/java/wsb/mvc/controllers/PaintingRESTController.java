@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.*;
 import wsb.mvc.models.Painting;
 import wsb.mvc.services.PaintingService;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @RestController
@@ -25,6 +26,17 @@ public class PaintingRESTController {
     Painting save(@RequestBody Painting painting) {
         paintingService.save(painting);
         return painting;
+    }
+
+    @RequestMapping("exception")
+    void exception() {
+        throw new RuntimeException("COŚ POSZŁO NIE TAK");
+    }
+
+    @RequestMapping("customStatus")
+    String customStatus(HttpServletResponse response) {
+        response.setStatus(422);
+        return "OHH NOO";
     }
 
 
