@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<title>Dodaj obraz</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<body>
+
+<div class="container">
+
+    <form th:action="@{/addFile}"
+          method="post"
+          enctype="multipart/form-data"
+          class="mb-2 mt-2">
+
+        <h3 class="text-center">Dodaj plik</h3>
+
+
+        <div class="form-group row mb-2">
+            <div class="col-md-4 text-end">
+                <label class="col-form-label">Opis</label>
+            </div>
+
+            <div class="col-md-8">
+                <input name="description" class="form-control"/>
+            </div>
+        </div>
+
+        <div class="form-group row mb-2">
+            <div class="col-md-4 text-end">
+                <label class="col-form-label">Plik</label>
+            </div>
+
+            <div class="col-md-8">
+                <input name="file" type="file" class="form-control"/>
+            </div>
+        </div>
+
+        <div class="row float-end">
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary">Dodaj</button>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+
+</body>
+</html>
