@@ -45,3 +45,23 @@ function findStatusClass(status) {
             return "";
     }
 }
+
+function sendWithHeader() {
+    let config = {
+        headers: {
+            Authorization: 'Basic ABC'
+        }
+    }
+
+    axios.get("/api/auth", config).then(displayResponse);
+}
+
+function sendWithCookie() {
+    document.cookie = "ciastko_JS=siema";
+    document.cookie = "ciastko_JS2=siema;max-age=200";
+
+    axios.get("/api/cookie").then(response => {
+        const responseDiv = document.getElementById("response");
+        responseDiv.innerText = `${document.cookie}`;
+    })
+}
