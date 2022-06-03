@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 public class FakePaintingRepository implements PaintingRepository {
 
     private static final List<Painting> paintings = new LinkedList<>(Arrays.asList(
-            new Painting("Papież Leon X", "Fernando Botero", 1964, "https://bestofbharat.com/wp-content/uploads/2019/10/Pope-leo-x-after-raphael-199.png"),
+            new Painting("Papież Leon X", "Fernando Botero", 1964, "https://en.wahooart.com/Art.nsf/O/9GF6XW/$File/FernandoBoteroAngulo-lepapeLeonX(d_apresRaphael).JPG"),
             new Painting("Ogród rozkoszy ziemskich", "Hieronim Bosch", 1500, "https://upload.wikimedia.org/wikipedia/commons/a/ae/El_jard%C3%ADn_de_las_Delicias%2C_de_El_Bosco.jpg"),
             new Painting("Pocałunek", "Gustav Klimt", 1908, "https://upload.wikimedia.org/wikipedia/commons/4/40/The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg"),
             new Painting("Czarny kwadrat na białym tle", "Kazimierz Malewicz", 1915, "https://upload.wikimedia.org/wikipedia/commons/5/57/Malevich.black-square.jpg"),
