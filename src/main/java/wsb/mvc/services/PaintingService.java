@@ -2,7 +2,6 @@ package wsb.mvc.services;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import wsb.mvc.models.Painting;
 import wsb.mvc.repositories.PaintingRepository;
@@ -16,7 +15,7 @@ public class PaintingService {
 
     final PaintingRepository paintingRepository;
 
-    public PaintingService(@Qualifier("fake") PaintingRepository paintingRepository) {
+    public PaintingService(PaintingRepository paintingRepository) {
         this.paintingRepository = paintingRepository;
     }
 
